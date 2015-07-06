@@ -59,7 +59,7 @@ Get application configurator and returns its promise.
 
 ```js
 helper.configurator.getAppConfigurator().then(function(configurator) {
-// ...
+    // ...
 });
 ```
 
@@ -124,11 +124,9 @@ helper.customUnits.add({
         entityState: 'entityState'
     },
     sampleData: {
-        value: {
-            entityState: {
-                id: 12,
-                name: 'In Progress'
-            }
+        entityState: {
+            id: 12,
+            name: 'In Progress'
         }
     },
     sizes: [cu.sizes.S],
@@ -152,7 +150,7 @@ helper.customUnits.add({
     },
     sampleData: {
         customField: {
-            value: "231231224"
+            value: '231231224'
         }
     },
     isEditable: true,
