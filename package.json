@@ -9,9 +9,9 @@
   "keywords": ["targetprocess", "mashup"],
   "author": "Aliaksei Shytkin <shitkin@targetprocess.com>",
   "license": {
-  "type": "MIT",
-  "url": "http://www.opensource.org/licenses/mit-license.php"
-},
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  },
   "devDependencies": {
     "chai": "^3.0.0",
     "eslint": "^0.23.0",
