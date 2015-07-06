@@ -57,6 +57,12 @@ Same as `.addBusListener(busName, eventName, callback, true)`.
 
 Get application configurator and returns its promise.
 
+```js
+helper.configurator.getAppConfigurator().then(function(configurator) {
+// ...
+});
+```
+
 ### `.customUnits`
 
 #### `.types` 
