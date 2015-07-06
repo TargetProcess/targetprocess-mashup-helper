@@ -2,6 +2,8 @@
 
 API wrapper for more convinient writing of Targetprocess mashups.
 
+[![Build Status](https://travis-ci.org/TargetProcess/targetprocess-mashup-helper.svg?branch=master)](https://travis-ci.org/TargetProcess/targetprocess-mashup-helper)
+
 ## Installation
 
 `npm install targetprocess-mashup-helper`
@@ -84,7 +86,7 @@ Config:
 * `hideIf` (function) check if unit will be hide entirely from card, e.g. if there is no data.
 * `isEditable` (boolean | function) check if unit is editable
 * `editorComponentName` (string | function) name of editor component
-* `editorData` (function) transform unit data to editor data, by default pass unit data as is.
+* `editorData` (object | function) transform unit data to editor data, by default pass unit data as is.
 
 ##### Examples
 
@@ -157,9 +159,9 @@ helper.customUnits.add({
 });
 ```
 
-### `debug`
+### `.debug`
 
-#### `showComponentsNames`
+#### `.showComponentsNames()`
 
 Add attribute `data-component-name` to component top DOM element for better debugging or using inside `.addBusListener` function.
 
