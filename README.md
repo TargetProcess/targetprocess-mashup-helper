@@ -154,7 +154,7 @@ helper.customUnits.add({
         }
     },
     isEditable: true,
-    editorComponentName: 'customField.editor.text',
+    editorComponentName: 'customField.text.editor',
     editorData: function(data) {
         return {
             cf: data.customField
