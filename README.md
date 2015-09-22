@@ -169,6 +169,10 @@ helper.customUnits.add({
 
 Add attribute `data-component-name` to component top DOM element for better debugging or using inside `.addBusListener` function.
 
+#### `.logBus(predicate, logger)`
+
+Output events and data of particular buses. `predicate` can be a string -- name or id of bus (can be found after call of `debug.showComponentsNames()`), function `(bus, eventName, data)` or if is ommitted, all events of all buses will be logged. `logger` is a function of `(busName, eventName, data)`, it writes to `console.log`. by default.
+
 ## License
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
