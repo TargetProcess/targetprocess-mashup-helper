@@ -3,6 +3,7 @@
 var configurator = require('./lib/configurator');
 var events = require('./lib/events');
 var customUnits = require('./lib/customUnits');
+var debug = require('./lib/debug');
 
 module.exports = {
     addBusListener: events.addBusListener,
@@ -11,5 +12,7 @@ module.exports = {
 
     configurator: configurator,
     events: events,
-    customUnits: customUnits
+    customUnits: customUnits,
+
+    debug: debug
 };
