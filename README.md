@@ -89,6 +89,7 @@ Config:
 * `sampleData` (object | string) sample data will be passed to unit template when using in library
 * `types` (array) list of entity types of cards, where unit accessible, all types by default. Use `customUnits.types` as values.
 * `sizes` (array) list of card sizes where unit is accessible, all sizes by default. Use `customUnits.sizes` as values.
+* `priority` (number) order of custom unit in customize card tab (more is closer to an end, can use negative).
 * `hideIf` (function) check if unit will be hide entirely from card, e.g. if there is no data.
 * `isEditable` (boolean | function) check if unit is editable
 * `editorComponentName` (string | function) name of editor component

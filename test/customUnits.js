@@ -212,6 +212,40 @@ describe('.customUnits', function() {
 
         });
 
+        it('processes priority', function(next) {
+
+            customUnits
+                .add({
+                    id: 'bar',
+                    priority: -10000
+                })
+                .then(function() {
+
+                    expect(register.firstCall.args[0][0].priority)
+                        .to.be.equal(-10000);
+
+                })
+                .then(next, next);
+
+        });
+
+        it('passes any additional fields', function(next) {
+
+            customUnits
+                .add({
+                    id: 'bar',
+                    something: 'wow'
+                })
+                .then(function() {
+
+                    expect(register.firstCall.args[0][0].something)
+                        .to.be.equal('wow');
+
+                })
+                .then(next, next);
+
+        });
+
     });
 
 });
