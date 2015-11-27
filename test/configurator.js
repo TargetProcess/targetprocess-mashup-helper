@@ -1,10 +1,12 @@
 'use strict';
 
+var jquery = require('jquery-deferred');
+
 var expect = require('chai')
     .expect;
-
 var sinon = require('sinon');
-var getGlobalBusOnce = sinon.spy(function() {});
+
+var getGlobalBusOn = sinon.spy(function() {});
 
 var proxyquire = require('proxyquire').noCallThru();
 var configurator = proxyquire('../lib/configurator', {
@@ -12,30 +14,13 @@ var configurator = proxyquire('../lib/configurator', {
         getGlobalBus: function() {
 
             return {
-                once: getGlobalBusOnce
+                on: getGlobalBusOn
             };
 
         }
     },
     jQuery: {
-        Deferred: function() {
-
-            var res;
-
-            return {
-                resolve: function(a) {
-
-                    res = a;
-
-                },
-                promise: function() {
-
-                    return Promise.resolve(res);
-
-                }
-            };
-
-        }
+        Deferred: jquery.Deferred
     }
 });
 
@@ -51,28 +36,44 @@ before(function() {
 
 describe('.configurator', function() {
 
-    it('calls .getGlobalBus().once on init', function() {
+    it('calls .getGlobalBus().on on init', function() {
 
-        expect(getGlobalBusOnce.callCount)
+        expect(getGlobalBusOn.callCount)
             .to.be.equal(1);
 
     });
 
-    it('.getAppConfigurator()', function(next) {
+    it('.getAppConfigurator()', function() {
 
-        expect(getGlobalBusOnce.firstCall.args[0])
+        expect(getGlobalBusOn.firstCall.args[0])
             .to.be.eql('configurator.ready');
-        expect(getGlobalBusOnce.firstCall.args[1])
+        expect(getGlobalBusOn.firstCall.args[1])
             .to.be.instanceof(Function);
 
-        getGlobalBusOnce.firstCall.args[1](null, 'dummyConfigurator');
+        var configuratorCallback = sinon.spy();
 
-        configurator.getAppConfigurator().then(function(res) {
+        configurator.getAppConfigurator().then(configuratorCallback);
 
-                expect(res)
-                    .to.be.eql('dummyConfigurator');
-                next();
+        getGlobalBusOn.firstCall.args[1](null, {
+            _id: 'global'
+        });
+        getGlobalBusOn.firstCall.args[1](null, {
+            _id: 'board',
+            id: 1
+        });
+        getGlobalBusOn.firstCall.args[1](null, {
+            _id: 'board',
+            id: 2
+        });
+        getGlobalBusOn.firstCall.args[1](null, {});
 
+        expect(configuratorCallback.calledOnce)
+            .to.be.true;
+
+        expect(configuratorCallback.firstCall.args[0])
+            .to.be.eql({
+                _id: 'board',
+                id: 1
             });
 
     });

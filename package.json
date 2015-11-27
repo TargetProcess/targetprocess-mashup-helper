@@ -1,6 +1,6 @@
 {
   "name": "targetprocess-mashup-helper",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "API wrapper for more convinient writing of Targetprocess mashups.",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,8 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "eslint": "^0.23.0",
+    "jquery": "^2.1.4",
+    "jquery-deferred": "^0.3.0",
     "mocha": "^2.2.5",
     "proxyquire": "^1.5.0",
     "sinon": "^1.15.3"
