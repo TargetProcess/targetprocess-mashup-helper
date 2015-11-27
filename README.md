@@ -23,21 +23,21 @@ var customUnits = require('targetprocess-mashup-helper/lib/customUnits')
 
 ## API
 
-### `.addBusListener()`
+### `.addBusListener`
 
 Alias to `.events.addBusListener`.
 
-### `.addBusListenerOnce()`
+### `.addBusListenerOnce`
 
 Alias to `.events.addBusListenerOnce`.
 
-### `.getAppConfigurator() => Promise<Configurator>`
+### `.getAppConfigurator`
 
 Alias to `.configurator.getAppConfigurator`.
 
 ### `.events`
 
-#### `.addBusListener(busName: string, eventName: string, listener: (event: object, data: object) => any, boolean?: isOnce) => void`
+#### `.addBusListener(busName, eventName, listener, isOnce)`
 
 Add listener to component bus by name.
 
@@ -47,9 +47,9 @@ helper.events.addBusListener('description', 'afterRender', function(e, renderDat
 });
 ```
 
-#### `.addBusListenerOnce(busName: string, eventName: string, listener: (event: object, data: object) => any)`
+#### `.addBusListenerOnce(busName, eventName, callback)`
 
-Same as `.addBusListener(busName, eventName, listener, true)`.
+Same as `.addBusListener(busName, eventName, callback, true)`.
 
 ### `.configurator`
 
@@ -65,37 +65,15 @@ helper.configurator.getAppConfigurator().then(function(configurator) {
 
 ### `.customUnits`
 
-#### `.types: {[name: string]: any}` 
+#### `.types` 
 
 Hash of constants to configure entity types custom unit is applied to.
 
-#### `.sizes: {[name: string]: any}` 
+#### `.sizes` 
 
 Hash of constants to configure card sizes custom unit is applied to.
 
-#### `.add(config: CustomUnitConfig) => Promise<Field>`
-
-```
-interface CustomUnitConfig {
-    id: string,
-    name?: string,
-    outerClassName?: string | (value: any) => string,
-    template?: string | CustomUnitTemplate,
-    model?: string | {[dataInValueName: string] => dataSelector: string},
-    types?: any[],
-    sizes?: any[],
-    priority?: number,
-    hideIf?: (value: any) => boolean,
-    isEditable?: boolean | (value: any) => boolean,
-    editorComponentName?: string | (value: any) => string,
-    editorData?: (value: any) => any
-}
-
-interface CustomUnitTemplate {
-    markup: string,
-    customFunctions: {[key: string] => (...any) => string}
-}
-```
+#### `.add(config) => Promise`
 
 Add custom unit to registry, make it allowed to add to card.
 
@@ -188,11 +166,11 @@ helper.customUnits.add({
 
 ### `.debug`
 
-#### `.showComponentsNames() => void`
+#### `.showComponentsNames()`
 
 Add attribute `data-component-name` to component top DOM element for better debugging or using inside `.addBusListener` function.
 
-#### `.logBus(predicate?: string | (bus: string, eventName: string, data: any) => boolean, logger?: (busName: string, eventName: string, data: any) => any)`
+#### `.logBus(predicate, logger)`
 
 Output events and data of particular buses. `predicate` can be a string -- name or id of bus (can be found after call of `debug.showComponentsNames()`), function `(bus, eventName, data)` or if is ommitted, all events of all buses will be logged. `logger` is a function of `(busName, eventName, data)`, it writes to `console.log`. by default.
 
