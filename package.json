@@ -1,6 +1,6 @@
 {
   "name": "targetprocess-mashup-helper",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "description": "API wrapper for more convinient writing of Targetprocess mashups.",
   "main": "index.js",
   "scripts": {
