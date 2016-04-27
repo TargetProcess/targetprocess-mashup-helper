@@ -4,7 +4,9 @@
   "description": "API wrapper for more convinient writing of Targetprocess mashups.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint . && mocha",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "targetprocess",
