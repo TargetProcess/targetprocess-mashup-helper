@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "API wrapper for more convinient writing of Targetprocess mashups.",
   "main": "index.js",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "scripts": {
     "test": "eslint . && mocha",
     "preversion": "npm test",
@@ -16,6 +20,13 @@
   "license": {
     "type": "MIT",
     "url": "http://www.opensource.org/licenses/mit-license.php"
+  },
+  "bugs": {
+    "url" : "https://github.com/TargetProcess/targetprocess-mashup-helper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TargetProcess/targetprocess-mashup-helper.git"
   },
   "devDependencies": {
     "chai": "^3.0.0",
