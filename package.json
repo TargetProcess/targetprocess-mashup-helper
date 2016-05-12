@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "eslint .",
     "coverage": "istanbul cover -x **/test/** -x **/tau/** _mocha",
-    "test": "npm run lint && npm run coverage",
+    "check-coverage": "istanbul check-coverage --statements 50 --functions 40 --branches 50 --lines 50",
+    "test": "npm run lint && npm run coverage && npm run check-coverage",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz"
   },
