@@ -33,6 +33,7 @@
     "commitizen": "^2.8.1",
     "cz-conventional-changelog": "^1.1.6",
     "eslint": "^0.23.0",
+    "ghooks": "^1.2.1",
     "jquery": "^2.1.4",
     "jquery-deferred": "^0.3.0",
     "mocha": "^2.2.5",
@@ -43,6 +44,9 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm test"
     }
   }
 }
