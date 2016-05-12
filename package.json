@@ -1,6 +1,5 @@
 {
   "name": "targetprocess-mashup-helper",
-  "version": "1.0.1",
   "description": "API wrapper for more convinient writing of Targetprocess mashups.",
   "main": "index.js",
   "files": [
@@ -9,8 +8,7 @@
   ],
   "scripts": {
     "test": "eslint . && mocha",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "targetprocess",
@@ -26,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/TargetProcess/targetprocess-mashup-helper.git"
+    "url": "https://github.com/TargetProcess/targetprocess-mashup-helper.git"
   },
   "devDependencies": {
     "chai": "^3.0.0",
@@ -35,6 +33,7 @@
     "jquery-deferred": "^0.3.0",
     "mocha": "^2.2.5",
     "proxyquire": "^1.5.0",
-    "sinon": "^1.15.3"
+    "sinon": "^1.15.3",
+    "semantic-release": "^4.3.5"
   }
 }
