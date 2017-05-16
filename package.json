@@ -1,7 +1,7 @@
 {
   "version": "0.0.0-semantically-released",
   "name": "targetprocess-mashup-helper",
-  "description": "API wrapper for more convinient writing of Targetprocess mashups.",
+  "description": "API wrapper for more convenient writing of Targetprocess mashups.",
   "main": "index.js",
   "files": [
     "lib",
@@ -21,10 +21,7 @@
     "mashup"
   ],
   "author": "Aliaksei Shytkin <shitkin@targetprocess.com>",
-  "license": {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
-  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TargetProcess/targetprocess-mashup-helper/issues"
   },

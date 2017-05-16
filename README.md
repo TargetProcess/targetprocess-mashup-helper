@@ -1,6 +1,6 @@
 # targetprocess-mashup-helper
 
-API wrapper for more convinient writing of Targetprocess mashups.
+API wrapper for more convenient writing of Targetprocess mashups.
 
 [![Build Status](https://travis-ci.org/TargetProcess/targetprocess-mashup-helper.svg?branch=master)](https://travis-ci.org/TargetProcess/targetprocess-mashup-helper)
 
