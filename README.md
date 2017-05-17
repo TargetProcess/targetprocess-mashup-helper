@@ -174,6 +174,22 @@ Add attribute `data-component-name` to component top DOM element for better debu
 
 Output events and data of particular buses. `predicate` can be a string -- name or id of bus (can be found after call of `debug.showComponentsNames()`), function `(bus, eventName, data)` or if is ommitted, all events of all buses will be logged. `logger` is a function of `(busName, eventName, data)`, it writes to `console.log`. by default.
 
+## Development
+
+To publish new version, just commit/push using [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.em2hiij8p46d)
+
+New versions are automatically published to NPM from Travis CI with help of semantic-release when [commit messages are formatted properly](https://github.com/semantic-release/semantic-release#default-commit-message-format).
+
+### Short list of recognized commit messages
+- feat: feature description
+- fix: bug fix
+- docs: documentation
+- style: formatting, missing semi colons, …
+- refactor: description
+- test: description (when adding missing tests)
+- chore: maintain infrastructure
+- revert: (header of reverted commit)
+
 ## License
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
